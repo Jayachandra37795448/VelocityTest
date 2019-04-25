@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+<head>
+
+    <title>Velocity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="script.js" ></script>
+</head>
+<header class="headerText text-center">
+    Welcome to Velocity
+</header>
+<body >
+    <div id="content" ng-controller="MainCtrl" class="marTop1Per">
+        <div class="pull-left width17P">
+        <input type='text' ng-model='searchText' placeholder="Search a name like : Soheil or something " />
+            <ul>
+                <li ng-repeat='person in people | filter:searchText' ng-click="profileData(person);"> {{person.name}} </li>
+            </ul>
+        </div>
+        <div class="pull-right width75Per">
+            <div>
+                <span>Petar Hoang</span>
+                <img src="Avatar.PNG" style="height: 30px;width:30px">
+                <span class="glyphicon glyphicon-circle-arrow-down" style="font-size: 50px"></span>
+            </div>
+            <div>
+                <button>Send message</button>
+                <ul >
+                    <li class="heart" ng-repeat="rating in selectedPerson.ratingArray">
+                        &#9829;
+                    </li>
+                    <li class="heart"ng-repeat="rating in selectedPerson.nratingArray">
+                        &#9825;
+                    </li>
+                </ul>
+            </div>
+            <img src="{{selectedPerson.img}}">
+            <p ng-bind="selectedPerson.Description"></p>
+            <table class="table-bordered">
+                <th>Likes</th>
+                <th>Dislikes</th>
+                <tr ng-repeat="like in selectedPerson.Likes">
+                    <td width="200px">{{like}}</td>
+                    <td>{{selectedPerson.Dislikes[$index]}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+<div class="clearfix"></div>
+<footer class="author marLeft20">
+    <a href="https://www.google.com/" target="_blank"> Learn more about Velocity </a>
+</footer>
+</html>
