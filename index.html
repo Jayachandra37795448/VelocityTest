@@ -8,51 +8,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="script.js" ></script>
 </head>
-<header class="headerText text-center">
-    Welcome to Velocity
-</header>
 <body >
-    <div id="content" ng-controller="MainCtrl" class="marTop1Per">
-        <div class="pull-left width17P">
-        <input type='text' ng-model='searchText' placeholder="Search a name like : Soheil or something " />
-            <ul>
-                <li ng-repeat='person in people | filter:searchText' ng-click="profileData(person);"> {{person.name}} </li>
+<header class="headerText text-center">
+    Velocity Test
+</header>
+    <div id="content" ng-controller="MainCtrl" class="marTop1Per container">
+        <div class="pull-left col-xs-2 search-section marginRight10pT">
+            <div class="search-wrapper">
+                <form>
+                    <span class="fa fa-search searchIcon"></span>
+                    <input type="text" name="focus" class="search-box text-center" placeholder="search" ng-model='searchText' ng-keyup="test();"/>
+                    <button class="close-icon" type="reset"></button>
+                </form>
+            </div>
+            <ul id="contacts" ng-if="showProfileData">
+                <li ng-repeat='person in people | filter:searchText' ng-click="profileData(person);" class="table-bordered width38p"> {{person.name}} </li>
             </ul>
         </div>
-        <div class="pull-right width75Per">
-            <div>
+        <div class="col-xs-8">
+            <div class="pull-right marTop0">
                 <span>Petar Hoang</span>
                 <img src="Avatar.PNG" style="height: 30px;width:30px">
-                <span class="glyphicon glyphicon-circle-arrow-down" style="font-size: 50px"></span>
             </div>
+            <div class="clearfix"></div>
             <div>
-                <button>Send message</button>
-                <ul >
-                    <li class="heart" ng-repeat="rating in selectedPerson.ratingArray">
-                        &#9829;
-                    </li>
-                    <li class="heart"ng-repeat="rating in selectedPerson.nratingArray">
-                        &#9825;
-                    </li>
-                </ul>
+            <div class="col-xs-4 marTop1Per PSection">
+                <img class="profilePic" src="{{selectedPerson.img}}">
             </div>
-            <img src="{{selectedPerson.img}}">
-            <p ng-bind="selectedPerson.Description"></p>
-            <table class="table-bordered">
+                <div class="marTop0 col-xs-4 SmSection">
+                    <button class="btn smButton">SEND MESSAGE!</button>
+                    <ul id="hearts">
+                        <li class="heart" ng-repeat="rating in selectedPerson.ratingArray">
+                            &#9829;
+                        </li>
+                        <li class="heart"ng-repeat="rating in selectedPerson.nratingArray">
+                            &#9825;
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            <blockquote class="font14"><p ng-bind="selectedPerson.Description"></p></blockquote>
+            <table class="table-bordered marTop6p">
                 <th>Likes</th>
                 <th>Dislikes</th>
                 <tr ng-repeat="like in selectedPerson.Likes">
-                    <td width="200px">{{like}}</td>
-                    <td>{{selectedPerson.Dislikes[$index]}}</td>
+                    <td width="30%">{{like}}</td>
+                    <td width="30%">{{selectedPerson.Dislikes[$index]}}</td>
                 </tr>
             </table>
+            </div>
         </div>
     </div>
+    <div class="clearfix"></div>
+    <footer class="author backgroudGrey padding3p text-center">
+        <a href="https://www.dropbox.com/s/21r6c10bpr0naud/vlocity-code-challenge-screenshot.PNG?dl=0" target="_blank"> Click here to see wireframe </a>
+    </footer>
 </body>
-<div class="clearfix"></div>
-<footer class="author marLeft20">
-    <a href="https://www.google.com/" target="_blank"> Learn more about Velocity </a>
-</footer>
 </html>

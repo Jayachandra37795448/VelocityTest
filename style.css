@@ -969,7 +969,7 @@ table.dataTable .dt-group td:first-of-type{
 * {margin: 0; padding: 0;}
 
 div {
-    margin: 20px;
+    margin: 10px;
 }
 
 ul {
@@ -1003,4 +1003,143 @@ li:hover {
 .heart{
     font-size: 30px;
     display: inline
+}
+
+.marTop0{
+    margin-top: 0 !important;
+}
+
+.padding3p{
+    padding: 3%;
+}
+
+.profilePic{
+    height: 50%;
+    width: 50%;
+    border-radius: 7px;
+}
+.PSection{
+    margin-left: -2%;
+    margin-top: 0 !important;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+.search-box,.close-icon,.search-wrapper {
+    position: relative;
+    padding: 7px;
+}
+.search-wrapper {
+    width: 17em;
+    margin-left: 0;
+    padding-top: 10%;
+}
+.search-box {
+    width: 82%;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: 15px;
+}
+.search-box:focus {
+    box-shadow: 0 0 15px 5px #b0e0ee;
+    border: 2px solid #bebede;
+}
+.close-icon {
+    border:1px solid transparent;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0;
+    cursor: pointer;
+}
+.close-icon:after {
+    content: "X";
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    /*background-color: grey;*/
+    z-index:1;
+    right: 35px;
+    top: 0;
+    bottom: 3%;
+    margin: auto;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+    font-size: 12px;
+    /*box-shadow: 0 0 2px #E50F0F;*/
+    cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+    display: none;
+}
+
+.searchIcon{
+    position: absolute;
+    display: block;
+    z-index: 1;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 2.375rem;
+    height: 2.375rem;
+}
+
+.width38p{
+    width:38%;
+}
+
+.search-section{
+    margin-top: -2%;
+}
+
+.SmSection{
+    margin-left: -8%;
+    margin-top: 1% !important;
+}
+
+#contacts li{
+    padding: 31px;
+    overflow: auto;
+    height: 6em;
+    text-align: center;
+}
+
+.smButton{
+    background-color: black;
+    color: #FFFFFF;
+}
+
+#hearts li{
+    padding: 0;
+}
+
+tr:nth-child(even) {background-color: #FAFAD2;}
+
+th, td {
+    text-align: left;
+    padding: 0.5em !important;
+}
+
+.marTop6p{
+    margin-top: 6%;
+}
+
+.font14{
+    font-size: 14px;
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .marginRight10pT{
+        margin-right: 10%;
+    }
 }

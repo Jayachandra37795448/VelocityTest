@@ -7,6 +7,7 @@ app.controller("MainCtrl", function($scope, $http, $window){
     $scope.isMobile = false;
     $scope.isDesktop = false;
     $scope.isTablet = false;
+    $scope.showProfileData = true;
 	$http.get("people.json").then(function(people) {
        $scope.people = people.data.People;
 
@@ -27,6 +28,7 @@ app.controller("MainCtrl", function($scope, $http, $window){
 
        if($window.innerWidth < 768){
            $scope.isMobile = true;
+           $scope.showProfileData = false;
        }
        if($window.innerWidth >= 768 && $window.innerWidth <= 1024){
            $scope.isTablet = true;
@@ -35,6 +37,13 @@ app.controller("MainCtrl", function($scope, $http, $window){
        }
 
        $scope.profileData($scope.people[0])
+
+        $scope.test = function () {
+            if($window.innerWidth < 768){
+                $scope.showProfileData = true;
+            }
+
+        }
 
 
 
